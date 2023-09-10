@@ -3,9 +3,9 @@ import Cart from "@/components/Cart.vue";
 </script>
 
 <template>
-  <div v-if="$store.state.cartProducts.length > 0">
+  <div v-if="$store.state.cartProducts.count > 0">
     <Cart
-      v-for="product in $store.state.cartProducts"
+      v-for="product in $store.state.cartProducts.products"
       :product="product"
       :isCart="true"
       :loading="false"

@@ -55,7 +55,12 @@ function removeFromCart(id) {
     <v-img cover height="250" :src="product.images[0]"></v-img>
 
     <v-card-item>
-      <v-card-title>{{ product.title }}</v-card-title>
+      <v-card-title
+        >{{ product.title }}
+        <span v-if="product.amount"
+          >({{ product.amount + "x" }})</span
+        ></v-card-title
+      >
     </v-card-item>
 
     <v-card-text>
