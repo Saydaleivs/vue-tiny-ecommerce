@@ -85,11 +85,13 @@ function skipValue(page, limit) {
           @update:model-value="handleCategoryChange"
         ></v-select>
 
-        <RouterLink to="/cart">
-          <div :style="{ cursor: 'pointer' }">
-            <svg-icon type="mdi" :path="path"></svg-icon>
-          </div>
-        </RouterLink>
+        <v-badge :content="$store.state.cartProducts.length">
+          <RouterLink to="/cart">
+            <div :style="{ cursor: 'pointer' }">
+              <svg-icon type="mdi" :path="path"></svg-icon>
+            </div>
+          </RouterLink>
+        </v-badge>
       </div>
 
       <div v-if="!loading">
